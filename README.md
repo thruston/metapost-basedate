@@ -22,12 +22,16 @@ from 4095 BCE to 4095 CE with plain MP using the scaled number system.
 To get the base number for today use `base` with the built-in date variables:
 `base(year, month, day)`.
 
-The macros do no range checking, by design.  So `base(year, 3, 0)` will give
-you the last day of February in the current year, and `base(year, month, day
-+ 42)` will give you the base number for the date in six weeks time.
+The macros do no range checking, by design; this is often helpful.  For example
 
-You can also calculate the difference between two dates, using `base(a,b,c) -
-base(d,e,f)` except that the result will be in units of 1/1024, so you need
+- `base(year, 3, 0)` will give you the last day of February in the current year,
+- `base(year, month, day + 42)` will give you the base number for the date in six weeks time.
+
+You can also calculate the difference between two dates, using
+
+    base(a,b,c) - base(d,e,f)
+
+except that the result will be in units of 1/1024, so you need
 to multiply by 1024 to get the difference as days. To avoid errors try to
 avoid dates more than 11 years apart (or use the `decimal` number system).
 
