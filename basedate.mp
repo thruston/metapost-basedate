@@ -143,3 +143,14 @@ vardef easter(expr y) =
 enddef;
 %
 % The `easter` macro returns the base date number of Easter Sunday in the given year.
+
+vardef next_isoweekday(expr b, weekday) = 
+  save c, d; 
+  c = isoweekday(b);
+  if c = weekday:
+    d = 7;
+  else:
+    d = (weekday - c) mod 7;
+  fi
+  b + d / 1024
+enddef;
