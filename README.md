@@ -81,3 +81,7 @@ Gregorian date formatted according to ISO 8601 as "YYYY-MM-DD".
 
 `stripdate` converts a <string> representing a date as "YYYYMMDD" or "YYYY-MM-DD" and returns
 the corresponding triple of numeric values represeting `(y, m, d)`.
+
+## `easter(y)`
+
+The `easter` macro returns the base date number of Easter Sunday in the given year.
